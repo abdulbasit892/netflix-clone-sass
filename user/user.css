@@ -1,0 +1,911 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+  outline: 0; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical; }
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  max-width: 100%; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+[hidden] {
+  display: none; }
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */ }
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+figure {
+  margin: 0; }
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */ }
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */ }
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+img {
+  vertical-align: middle; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+textarea {
+  resize: vertical; }
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+@keyframes cards-animation {
+  50% {
+    min-width: 300px;
+    min-height: 150px;
+    bottom: 15px; }
+  100% {
+    min-width: 450px;
+    min-height: 220px;
+    bottom: 30px; } }
+@keyframes video-animation {
+  50% {
+    min-width: 300px;
+    min-height: 150px;
+    bottom: 30px; }
+  100% {
+    min-width: 450px;
+    min-height: 190px;
+    bottom: 60px; } }
+@keyframes delaying {
+  100% {
+    opacity: 0; } }
+@keyframes slide {
+  20% {
+    right: 0%; }
+  40% {
+    right: 14%; }
+  60% {
+    right: 28%; }
+  80% {
+    right: 40%; }
+  100% {
+    right: 50%; } }
+@keyframes biggy {
+  100% {
+    bottom: 50px;
+    min-width: 300px;
+    min-height: 500px; } }
+.header #nav #bell .inner, .header #nav #more .inner {
+  z-index: 200;
+  display: none;
+  position: absolute;
+  background: black;
+  opacity: 0.9;
+  overflow: hidden;
+  font-weight: 500;
+  color: #e5e5e5; }
+
+#banner .maturity-level, .video .maturity-level {
+  position: absolute;
+  right: 0;
+  top: 70%;
+  color: white;
+  z-index: 200;
+  opacity: 0.7;
+  background: #141414;
+  padding: 15px 60px 15px 10px;
+  font-size: 20px;
+  border-left: 4px white solid; }
+
+body {
+  background: #141414; }
+
+.header {
+  width: 100%;
+  position: fixed;
+  background: #141414;
+  color: #e5e5e5;
+  font-family: "Roboto", sans-serif;
+  z-index: 500;
+  height: 70px; }
+  .header #inner {
+    padding-left: 5%;
+    display: flex;
+    width: 90%; }
+  .header ul {
+    height: 100%;
+    width: 32%;
+    cursor: pointer;
+    align-items: center;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none; }
+    .header ul > li {
+      font-size: 1.1vw; }
+      .header ul > li:hover {
+        color: grey; }
+  .header #nav {
+    display: flex;
+    margin-top: 20px;
+    margin-left: auto; }
+    .header #nav > div {
+      margin-right: 20px; }
+    .header #nav i {
+      font-size: 20px;
+      color: #e5e5e5; }
+    .header #nav #bell {
+      margin-top: 10px; }
+      .header #nav #bell .triangle {
+        position: absolute;
+        margin-left: 0px;
+        top: 65px;
+        clip-path: polygon(50% 1%, 0 100%, 100% 100%);
+        background: white;
+        display: none;
+        color: white; }
+      .header #nav #bell .inner {
+        top: 80px;
+        font-family: "Roboto", sans-serif;
+        right: 50px;
+        width: 400px;
+        border-top: 1px white solid; }
+        .header #nav #bell .inner > div {
+          height: 100px;
+          display: flex;
+          overflow: hidden; }
+          .header #nav #bell .inner > div > div > a > img {
+            margin: 10px 10px 0;
+            width: 180px;
+            height: 80px; }
+          .header #nav #bell .inner > div > div > h1 {
+            margin-top: 10px;
+            font-size: 1vw;
+            padding-top: 2%; }
+          .header #nav #bell .inner > div > div > p {
+            font-size: 1.1vw;
+            color: grey; }
+          @media screen and (min-width: 1800px) {
+            .header #nav #bell .inner > div > div > h1,
+            .header #nav #bell .inner > div > div > p {
+              font-size: 14px; } }
+      .header #nav #bell:hover .inner, .header #nav #bell:hover .triangle {
+        display: inline; }
+    .header #nav #more {
+      position: relative; }
+      .header #nav #more .triangle {
+        position: absolute;
+        margin-left: 0px;
+        top: 65px;
+        clip-path: polygon(50% 1%, 0 100%, 100% 100%);
+        background: white;
+        display: none;
+        color: white;
+        top: 48px;
+        right: 0px; }
+      .header #nav #more .inner {
+        border: 0.5px gray solid;
+        top: 65px;
+        right: -20px;
+        width: 170px;
+        height: 300px;
+        padding: 10px; }
+        .header #nav #more .inner > div {
+          display: flex; }
+          .header #nav #more .inner > div > a > img {
+            padding: 5px;
+            width: 35px;
+            height: 35px; }
+          .header #nav #more .inner > div h1 {
+            padding-top: 10px; }
+            .header #nav #more .inner > div h1:hover {
+              text-decoration: underline; }
+        .header #nav #more .inner #links {
+          width: 100%;
+          display: flex;
+          flex-direction: column; }
+          .header #nav #more .inner #links hr {
+            width: 100%; }
+          .header #nav #more .inner #links > p {
+            cursor: pointer;
+            font-size: 14px;
+            padding: 6px 5px; }
+            .header #nav #more .inner #links > p:hover {
+              text-decoration: underline; }
+      .header #nav #more:hover .inner, .header #nav #more:hover .triangle {
+        display: inline; }
+    .header #nav #text {
+      padding-top: 10px;
+      z-index: 200;
+      color: #e5e5e5;
+      cursor: pointer; }
+    .header #nav #search {
+      position: relative;
+      overflow: hidden;
+      height: 30px;
+      width: 30px; }
+      .header #nav #search > div a > i {
+        padding: 5px;
+        margin: 0; }
+      .header #nav #search > div > form > input {
+        border: none;
+        display: none;
+        bottom: 28px;
+        left: 35px;
+        position: relative;
+        padding: 5px;
+        margin: 0;
+        background: black;
+        color: white; }
+      .header #nav #search:hover {
+        border: 1px white solid;
+        background: black;
+        transition: 0.3s;
+        width: 290px; }
+        .header #nav #search:hover form > input {
+          display: inline; }
+
+#banner {
+  width: 100%;
+  position: relative;
+  background: url("../images/bann.jpg");
+  height: 100%;
+  background-size: cover;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  word-spacing: 1px; }
+  #banner .empty {
+    position: absolute;
+    z-index: 120;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(transparent, #141414);
+    opacity: 0.9;
+    background: linear-gradient(transparent, #141414); }
+    #banner .empty h1 {
+      visibility: hidden; }
+  #banner .description {
+    padding-left: 4%;
+    padding-top: 20%;
+    z-index: 160;
+    position: absolute;
+    max-width: 45%; }
+    #banner .description button {
+      color: #e5e5e5;
+      border: none;
+      padding: 15px 40px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      margin: 15px 1px; }
+      #banner .description button > i {
+        padding: 0 10px; }
+      #banner .description button:hover {
+        background: #e5e5e5;
+        color: #141414; }
+
+.sliding-cards-big {
+  position: relative;
+  overflow: hidden;
+  height: 520px; }
+  .sliding-cards-big .head {
+    background: #141414;
+    color: #e5e5e5; }
+    .sliding-cards-big .head > h1 {
+      font-size: 26px;
+      padding: 20px 0px 10px 4%;
+      color: #e5e5e5;
+      font-weight: 500;
+      font-family: "Baloo Chettan", cursive; }
+  .sliding-cards-big .cards-big {
+    margin-left: 4%;
+    display: flex; }
+    .sliding-cards-big .cards-big > div {
+      position: relative;
+      padding: 0px 2px; }
+      .sliding-cards-big .cards-big > div > a > img {
+        position: relative;
+        z-index: 240;
+        width: 240px;
+        height: 140px; }
+      .sliding-cards-big .cards-big > div:hover > a > img {
+        z-index: 450;
+        animation: cards-animation 1s linear forwards, delaying 1s linear forwards 1s; }
+      .sliding-cards-big .cards-big > div:hover .cards-description {
+        z-index: 400; }
+        .sliding-cards-big .cards-big > div:hover .cards-description .video-cards {
+          animation: video-animation 0.1s linear forwards 0.9s; }
+        .sliding-cards-big .cards-big > div:hover .cards-description .cards-content {
+          display: inline; }
+    .sliding-cards-big .cards-big .right-arrow,
+    .sliding-cards-big .cards-big .left-arrow {
+      position: absolute;
+      background: #141414;
+      z-index: 320;
+      left: 95.5%;
+      height: 100%;
+      opacity: 0.7; }
+      .sliding-cards-big .cards-big .right-arrow > img,
+      .sliding-cards-big .cards-big .left-arrow > img {
+        padding: 50px 10px; }
+    .sliding-cards-big .cards-big .left-arrow {
+      left: 3.5%; }
+    .sliding-cards-big .cards-big:hover .right-arrow, .sliding-cards-big .cards-big:hover .left-arrow {
+      display: inline; }
+    .sliding-cards-big .cards-big .right-arrow:hover ~ div,
+    .sliding-cards-big .cards-big .left-arrow:hover ~ div {
+      animation: slide 2s linear forwards; }
+    .sliding-cards-big .cards-big .right-arrow,
+    .sliding-cards-big .cards-big .left-arrow {
+      left: 95%; }
+      .sliding-cards-big .cards-big .right-arrow > img,
+      .sliding-cards-big .cards-big .left-arrow > img {
+        width: 60px !important;
+        height: 80px !important;
+        padding: 200px 10px !important; }
+    .sliding-cards-big .cards-big > div:hover > a > img {
+      animation: biggy 1s forwards; }
+    .sliding-cards-big .cards-big > div:hover .next-description {
+      display: inline; }
+    .sliding-cards-big .cards-big .left-arrow {
+      left: 60px; }
+    .sliding-cards-big .cards-big img {
+      height: 400px !important; }
+
+.sliding-cards {
+  position: relative;
+  overflow: hidden;
+  height: 220px; }
+  .sliding-cards .head {
+    background: #141414;
+    color: #e5e5e5; }
+    .sliding-cards .head > h1 {
+      font-size: 22px;
+      padding: 0px 0px 10px 4%;
+      color: #e5e5e5;
+      font-weight: 500;
+      font-family: "Baloo Chettan", cursive; }
+  .sliding-cards .cards {
+    margin-left: 4%;
+    display: flex; }
+    .sliding-cards .cards > div {
+      position: relative;
+      padding: 0px 2px; }
+      .sliding-cards .cards > div > a > img {
+        position: relative;
+        z-index: 240;
+        width: 240px;
+        height: 140px; }
+      .sliding-cards .cards > div:hover > a > img {
+        z-index: 450;
+        animation: cards-animation 1s linear forwards, delaying 1s linear forwards 1s; }
+      .sliding-cards .cards > div:hover .cards-description {
+        z-index: 400; }
+        .sliding-cards .cards > div:hover .cards-description .video-cards {
+          animation: video-animation 0.1s linear forwards 0.9s; }
+        .sliding-cards .cards > div:hover .cards-description .cards-content {
+          display: inline; }
+    .sliding-cards .cards .right-arrow,
+    .sliding-cards .cards .left-arrow {
+      position: absolute;
+      background: #141414;
+      z-index: 320;
+      left: 95.5%;
+      height: 100%;
+      opacity: 0.7; }
+      .sliding-cards .cards .right-arrow > img,
+      .sliding-cards .cards .left-arrow > img {
+        padding: 50px 10px; }
+    .sliding-cards .cards .left-arrow {
+      left: 3.5%; }
+    .sliding-cards .cards:hover .right-arrow, .sliding-cards .cards:hover .left-arrow {
+      display: inline; }
+    .sliding-cards .cards .right-arrow:hover ~ div,
+    .sliding-cards .cards .left-arrow:hover ~ div {
+      animation: slide 2s linear forwards; }
+  .sliding-cards .cards-description {
+    position: absolute;
+    color: white;
+    z-index: 200;
+    top: 0px;
+    left: 2px; }
+    .sliding-cards .cards-description .video-cards {
+      position: relative;
+      width: 240px;
+      height: 140px; }
+    .sliding-cards .cards-description .cards-content {
+      display: none;
+      position: relative;
+      z-index: 220;
+      padding-left: 50px;
+      top: -155px;
+      left: 10px;
+      font-family: "Roboto", sans-serif; }
+    .sliding-cards .cards-description .play > a > i {
+      color: red;
+      border: 1px white solid;
+      padding: 9px;
+      margin-bottom: 5px;
+      border-radius: 50%;
+      background: #141414; }
+    .sliding-cards .cards-description .listed {
+      cursor: pointer;
+      font-size: 14px;
+      margin: 2px 8px 0px 0px;
+      display: flex;
+      text-indent: -10px;
+      list-style-type: square; }
+      .sliding-cards .cards-description .listed > li {
+        color: white;
+        font-weight: 500;
+        margin-left: 15px; }
+        .sliding-cards .cards-description .listed > li:hover {
+          color: grey; }
+      .sliding-cards .cards-description .listed .first {
+        list-style-type: none; }
+    .sliding-cards .cards-description .headed {
+      font-size: 20px;
+      margin-bottom: 5px; }
+    .sliding-cards .cards-description .row {
+      display: flex;
+      width: 40%;
+      font-size: 14px;
+      justify-content: space-between; }
+      .sliding-cards .cards-description .row .match {
+        color: green;
+        padding-top: 2px;
+        font-weight: bold; }
+      .sliding-cards .cards-description .row .age {
+        padding: 2px 3px;
+        word-spacing: 1px;
+        font-size: 14px;
+        border: 1px white solid; }
+      .sliding-cards .cards-description .row .time {
+        padding-top: 2px; }
+
+.video {
+  position: relative;
+  background: url("../images/video-logo.jpg");
+  background-size: cover; }
+  .video .empty {
+    position: absolute;
+    z-index: 120;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(transparent, #141414);
+    opacity: 0.9; }
+    .video .empty h1 {
+      visibility: hidden; }
+  .video .maturity-level {
+    right: 47%;
+    top: 60%; }
+  .video .outer {
+    width: 100%;
+    height: 100%;
+    display: flex; }
+  .video .video-div-1 {
+    z-index: 140; }
+    .video .video-div-1 video {
+      margin-left: 4%;
+      width: 96% !important;
+      height: 100% !important; }
+  .video .DEScription .video-div-2 {
+    position: relative;
+    color: #e5e5e5;
+    z-index: 160;
+    top: 26%;
+    padding-left: 30px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: "Roboto", sans-serif; }
+    .video .DEScription .video-div-2 > div > button {
+      color: #e5e5e5;
+      border: none;
+      padding: 15px 40px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      margin: 15px 1px; }
+      .video .DEScription .video-div-2 > div > button > i {
+        padding: 0 10px; }
+      .video .DEScription .video-div-2 > div > button:hover {
+        background: #e5e5e5;
+        color: #141414; }
+    .video .DEScription .video-div-2 > div > p {
+      max-width: 60%; }
+
+.footer {
+  background: #141414;
+  color: grey;
+  display: flex;
+  height: 30%;
+  padding: 10% 20%;
+  flex-direction: column; }
+  .footer i {
+    font-size: 30px;
+    margin: 10px;
+    color: grey; }
+  .footer #container {
+    display: flex; }
+    .footer #container p {
+      font-size: 14px;
+      width: 200px;
+      margin: 10px; }
+  .footer button {
+    color: #e5e5e5;
+    border: none;
+    padding: 15px 40px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    margin: 15px 1px;
+    border: 1px grey solid;
+    background: #141414; }
+    .footer button > i {
+      padding: 0 10px; }
+    .footer button:hover {
+      background: #e5e5e5;
+      color: #141414; }
+
+/*# sourceMappingURL=user.css.map */

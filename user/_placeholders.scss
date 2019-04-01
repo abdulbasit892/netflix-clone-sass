@@ -1,0 +1,24 @@
+@import "_variable.scss";
+
+%hidden-div {
+  z-index: 200;
+  display: none;
+  position: absolute;
+  background: darken($color: #000000, $amount: 50%);
+  opacity: 0.9;
+  overflow: hidden;
+  font-weight: $font-weight;
+  color: $primary-color;
+}
+%maturity {
+  position: absolute;
+  right: 0;
+  top: 70%;
+  color: white;
+  z-index: 200;
+  opacity: 0.7;
+  background: $background-color;
+  padding: 15px 60px 15px 10px;
+  font-size: $font-medium-size;
+  border-left: 4px white solid;
+}

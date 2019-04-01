@@ -1,0 +1,138 @@
+@import "_reset.scss";
+
+$background-color: #141414;
+$primary-color: grey;
+$font-family: "Roboto", sans-serif;
+$line-space: 1px;
+$secondary-color: white;
+
+body {
+  background: $background-color;
+}
+
+#logoPicture {
+  width: 150px;
+  height: 82px;
+  margin: 5px 45px;
+}
+
+.container {
+  margin-top: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: $primary-color;
+  font-family: $font-family;
+  text-align: center;
+
+  h1 {
+    color: $secondary-color;
+    font-size: 80px;
+    font-weight: 300;
+    width: 100%;
+    letter-spacing: $line-space;
+  }
+  > div {
+    margin: 60px 20px;
+    > a {
+      > img {
+        height: 200px;
+        width: 200px;
+        border: 4px rgba(51, 51, 51, 0.4) solid;
+        &:hover {
+          border: 4px $secondary-color solid;
+        }
+      }
+    }
+    > p {
+      margin-top: 7%;
+      font-size: 22px;
+    }
+  }
+}
+#manageProfile {
+  display: flex;
+  justify-content: center;
+  > button {
+    background: $background-color;
+    padding: 20px 45px;
+    margin-top: 100px;
+    font-weight: 100;
+    font-size: 2em;
+    letter-spacing: ($line-space) * 2;
+    color: $primary-color;
+    border: 1px $primary-color solid;
+    &:hover {
+      border: 1px $secondary-color solid;
+      color: $secondary-color;
+    }
+  }
+}
+@media screen and (max-width: 1690px) {
+  .container {
+    margin-top: 100px;
+    h1 {
+      font-size: 50px;
+    }
+    > div {
+      margin: 20px;
+      > a {
+        > img {
+          height: 140px;
+          width: 140px;
+        }
+      }
+      > p {
+        margin-top: 7%;
+        font-size: 18px;
+      }
+    }
+  }
+  #manageProfile {
+    button {
+      padding: 10px 25px;
+      margin-top: 70px;
+      font-size: 1.1em;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    margin-top: 20px;
+    h1 {
+      font-size: 20px;
+    }
+    > div {
+      margin: 10px;
+      > a {
+        > img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+    }
+  }
+  #manageProfile {
+    button {
+      padding: 5px 10px;
+      margin-top: 0px;
+      font-size: 1em;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    h1 {
+      font-size: 40px;
+    }
+    > div {
+      margin: 20px;
+      > a {
+        > img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+@import "_variable.scss";
+@mixin triangle {
+  position: absolute;
+  margin-left: 0px;
+  top: 65px;
+  clip-path: polygon(50% 1%, 0 100%, 100% 100%);
+  background: white;
+  display: none;
+  color: white;
+}
+@keyframes cards-animation {
+  50% {
+    min-width: 300px;
+    min-height: 150px;
+    bottom: 15px;
+  }
+  100% {
+    min-width: 450px;
+    min-height: 220px;
+    bottom: 30px;
+  }
+}
+@keyframes video-animation {
+  50% {
+    min-width: 300px;
+    min-height: 150px;
+    bottom: 30px;
+  }
+  100% {
+    min-width: 450px;
+    min-height: 190px;
+    bottom: 60px;
+  }
+}
+@keyframes delaying {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide {
+  20% {
+    right: 0%;
+  }
+  40% {
+    right: 14%;
+  }
+  60% {
+    right: 28%;
+  }
+  80% {
+    right: 40%;
+  }
+  100% {
+    right: 50%;
+  }
+}
+
+@keyframes biggy {
+  100% {
+    bottom: 50px;
+    min-width: 300px;
+    min-height: 500px;
+  }
+}
+@mixin slider {
+  margin-left: 4%;
+  display: flex;
+  > div {
+    position: relative;
+    padding: 0px 2px;
+    > a > img {
+      position: relative;
+      z-index: 240;
+      width: 240px;
+      height: 140px;
+    }
+    &:hover {
+      > a > img {
+        z-index: 450;
+        animation: cards-animation 1s linear forwards,
+          delaying 1s linear forwards 1s;
+      }
+      .cards-description {
+        z-index: 400;
+        .video-cards {
+          animation: video-animation 0.1s linear forwards 0.9s;
+        }
+        .cards-content {
+          display: inline;
+        }
+      }
+    }
+  }
+  .right-arrow,
+  .left-arrow {
+    position: absolute;
+    background: $background-color;
+    z-index: 320;
+    left: 95.5%;
+    height: 100%;
+    opacity: 0.7;
+    > img {
+      padding: 50px 10px;
+    }
+  }
+  .left-arrow {
+    left: 3.5%;
+  }
+  &:hover .right-arrow,
+  &:hover .left-arrow {
+    display: inline;
+  }
+  .right-arrow:hover ~ div,
+  .left-arrow:hover ~ div {
+    animation: slide 2s linear forwards;
+  }
+}
+@mixin empty {
+  position: absolute;
+  z-index: 120;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(transparent, #141414);
+  opacity: 0.9;
+  h1 {
+    visibility: hidden;
+  }
+}
+
+@mixin button {
+  color: $primary-color;
+  border: none;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  margin: 15px 1px;
+  > i {
+    padding: 0 10px;
+  }
+  &:hover {
+    background: $primary-color;
+    color: $background-color;
+  }
+}
